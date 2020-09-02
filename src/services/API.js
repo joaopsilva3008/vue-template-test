@@ -2,11 +2,11 @@ import { instance } from './config'
 
 export default{
 
-    getTeams: (teamID)=> {
-        return instance.get('/Admin/GetAllTeams'
+    getBookingByNumber: (bookingNumber)=> {
+        return instance.get('/Booking/GetBookingByNumber'
                         , {
                             params: {
-                                id: teamID
+                                _bookingNumber: bookingNumber
                            }
                 })
     } 

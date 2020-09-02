@@ -66,10 +66,9 @@
                             <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
                         </div>
                     </div>
-                    <div>
-                        <ul>
-                            <li v-for="team in teams" :key="team.ID" v-text="team.Description"></li>
-                        </ul> 
+                    <div class="booking_air" v-if="booking_air != null">
+                        <h3>{{booking_air.ID}}</h3>
+                        <h3>{{booking_air.Client.ClientName}}</h3>
                     </div>
                 </div>
             </div>
@@ -80,35 +79,33 @@
 <script>
     import DxButton from 'devextreme-vue/button';
     import DxTabs from 'devextreme-vue/tabs';
-    import API from '../services/API'
-
+    
     export default {
-    components: {
-                DxButton,
-                DxTabs
-        },
-        data() {
-            return {
-                selectedIndex: 0,
-                longtabs,
-                teams: null
-            };
-        },
-         mounted: function() {
-                API.getTeams(2)
-                   .then(response =>{this.teams = response.data.data ; console.log(response)} )
-                   .catch(error => console.log(error))
-                   .finally(() => console.log("End of call"));
-        },
+        name: "BookingAIR",
         methods: {
             saveBooking() {
                 alert('Hello world!')
             },
             switchTabs(id){
                 console.log(id)
+            },
+        },
+        // mounted(){
+        //     this.booking_air = this.$store.getters.getBooking;
+        // },
+        components: {
+                DxButton,
+                DxTabs
+        },
+        computed: {
+            booking_air(){
+                return this.$store.getters.getBooking;
             }
         },
-        name: "BookingAIR"
+        data: () =>({
+                selectedIndex: 0,
+                longtabs
+        })
     };
 
     export const longtabs = [

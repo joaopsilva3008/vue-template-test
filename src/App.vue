@@ -7,7 +7,13 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+    mounted(){
+      this.$store.dispatch('setBooking');
+    }
+}
+</script>
 <style>
   @import './assets/css/global.css';
 </style>
