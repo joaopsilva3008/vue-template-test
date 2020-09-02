@@ -2,10 +2,6 @@ import API from '../../services/API'
 
 const state = {
     booking: {}
-    // booking: API.getBookingByNumber("2011916079")
-    //             .then(response => { this.booking = response.data.data; console.log(response) })
-    //             .catch(error => console.log(error))
-    //             .finally(() => console.log("End of call"))
 };
 
 const getters = {

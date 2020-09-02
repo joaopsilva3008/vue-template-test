@@ -67,8 +67,8 @@
                         </div>
                     </div>
                     <div class="booking_air" v-if="booking_air != null">
-                        <h3>{{booking_air.ID}}</h3>
-                        <h3>{{booking_air.Client.ClientName}}</h3>
+                        <!-- <h3>{{booking_air.BookingNumber}}</h3>
+                        <h3>{{booking_air.Client.ClientName}}</h3> -->
                     </div>
                 </div>
             </div>
@@ -79,9 +79,9 @@
 <script>
     import DxButton from 'devextreme-vue/button';
     import DxTabs from 'devextreme-vue/tabs';
-    
+
     export default {
-        name: "BookingAIR",
+        name: "BookingAir",
         methods: {
             saveBooking() {
                 alert('Hello world!')
@@ -90,9 +90,6 @@
                 console.log(id)
             },
         },
-        // mounted(){
-        //     this.booking_air = this.$store.getters.getBooking;
-        // },
         components: {
                 DxButton,
                 DxTabs
