@@ -1,23 +1,17 @@
 <template>
     <div>
-        <div class="row">
-            <div class="box box-primary">
-                <div class="box-body">
-                    <div style="float:right;margin:20px 0">
-                        <DxButton id="btn-save" 
-                                text="Save" 
-                                type="success"
-                                styling-mode="contained"
-                                :width="120"
-                                @click="saveBooking"
-                        />
-                    </div>
-                </div>
-            </div>
+        <div style="float:right;margin:20px 0">
+            <DxButton id="btn-save" 
+                    text="Save" 
+                    type="success"
+                    styling-mode="contained"
+                    :width="120"
+                    @click="saveBooking"
+            />
         </div>
-        <div class="row">
-            <div class="box box-primary">
-                <div class="box-body">
+        <div>
+            <div>
+                <div>
                     <div id="longtabs">
                         <DxTabs :data-source="longtabs" 
                                 :selected-index.sync="selectedIndex"
@@ -45,10 +39,6 @@
                     <div id="tab-revenue-costs" class="dxTabStyle" v-if="selectedIndex == 6">
                        <RevenueCostsComponent v-bind:booking="booking_air"/>
                     </div>
-                    <!-- <div class="booking_air" v-if="booking_air != null">
-                        <h3>{{booking_air.BookingNumber}}</h3>
-                        <h3>{{booking_air.Client.ClientName}}</h3> 
-                    </div> -->
                 </div>
             </div>
         </div>
