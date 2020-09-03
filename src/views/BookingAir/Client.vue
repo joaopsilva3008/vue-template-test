@@ -1,15 +1,16 @@
 .<template>
   <div>
-    <h1>Client</h1>
+    <ClientComponent/>
   </div>
 </template>
 
 <script>
+  import ClientComponent from "@/components/BookingAir/Client.vue";
+
   export default {
-    name:"Client"
+    name:"Client",
+    components:{
+      ClientComponent
+    }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

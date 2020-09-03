@@ -1,6 +1,9 @@
 .<template>
   <div>
-    <h1>Revenue and Costs</h1>
+    <div class="box-header ui-sortable-handle">
+        <i class="far fa-user bkg-icon-left-menu" style="margin-right:10px"></i>
+        <h3 class="box-title">Revenue and Costs</h3>
+    </div>
   </div>
 </template>
 

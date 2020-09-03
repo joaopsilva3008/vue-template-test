@@ -1,6 +1,9 @@
 .<template>
   <div>
-    <h1>Other Info</h1>
+    <div class="box-header ui-sortable-handle">
+        <i class="far fa-user bkg-icon-left-menu" style="margin-right:10px"></i>
+        <h3 class="box-title">Other Info</h3>
+    </div>
   </div>
 </template>
 

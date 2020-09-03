@@ -25,51 +25,30 @@
                         />
                     </div>
                     <div id="tab-client" class="dxTabStyle" v-if="selectedIndex == 0">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-user bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                        <ClientComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-booking" class="dxTabStyle" v-if="selectedIndex == 1">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-clipboard-list bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                       <BookingComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-origin-destination" class="dxTabStyle" v-if="selectedIndex == 2">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-map-marker-alt bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                       <OriginDestinationComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-booking-detail" class="dxTabStyle" v-if="selectedIndex == 3">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-pallet-alt bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                        <DetailsComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-shipments" class="dxTabStyle" v-if="selectedIndex == 4">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-conveyor-belt-alt bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                       <ShipmentComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-other-info" class="dxTabStyle" v-if="selectedIndex == 5">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-file-invoice bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                       <OtherInfoComponent v-bind:booking="booking_air"/>
                     </div>
                     <div id="tab-revenue-costs" class="dxTabStyle" v-if="selectedIndex == 6">
-                        <div class="box-header ui-sortable-handle">
-                            <i class="far fa-coins bkg-icon-left-menu" style="margin-right:10px"></i>
-                            <h3 class="box-title">{{longtabs[selectedIndex].text}}</h3>
-                        </div>
+                       <RevenueCostsComponent v-bind:booking="booking_air"/>
                     </div>
-                    <div class="booking_air" v-if="booking_air != null">
-                        <!-- <h3>{{booking_air.BookingNumber}}</h3>
-                        <h3>{{booking_air.Client.ClientName}}</h3> -->
-                    </div>
+                    <!-- <div class="booking_air" v-if="booking_air != null">
+                        <h3>{{booking_air.BookingNumber}}</h3>
+                        <h3>{{booking_air.Client.ClientName}}</h3> 
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -79,6 +58,13 @@
 <script>
     import DxButton from 'devextreme-vue/button';
     import DxTabs from 'devextreme-vue/tabs';
+    import BookingComponent from "@/components/BookingAir/Booking.vue";
+    import ClientComponent from "@/components/BookingAir/Client.vue";
+    import DetailsComponent from "@/components/BookingAir/Details.vue";
+    import OriginDestinationComponent from "@/components/BookingAir/OriginDestination.vue";
+    import OtherInfoComponent from "@/components/BookingAir/OtherInfo.vue";
+    import RevenueCostsComponent from "@/components/BookingAir/RevenueCosts.vue";
+    import ShipmentComponent from "@/components/BookingAir/Shipments.vue";
 
     export default {
         name: "BookingAir",
@@ -92,7 +78,14 @@
         },
         components: {
                 DxButton,
-                DxTabs
+                DxTabs,
+                BookingComponent,
+                ClientComponent,
+                DetailsComponent,
+                OriginDestinationComponent,
+                OtherInfoComponent,
+                RevenueCostsComponent,
+                ShipmentComponent
         },
         computed: {
             booking_air(){

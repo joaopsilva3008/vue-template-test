@@ -12,7 +12,7 @@ const actions = {
     // asynchronous
     async setBooking(state/*, payload*/){
         await API.getBookingByNumber("2011916079")
-                 .then(response => state.commit('setCurrentBooking', response.data))
+            .then(response =>{ state.commit('setCurrentBooking', response.data); console.log(response.data)})
                  .catch(error => console.log(error))
                  .finally(() => console.log("End of call"));
     }

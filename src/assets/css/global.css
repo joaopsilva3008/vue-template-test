@@ -68,3 +68,12 @@
 .left-aligned {
 	text-align: left;
 }
+
+.tab-link{
+	width: 150px;
+	border: 1px solid #000000;
+	float: left;
+}
+.tab.container{
+	padding: 5px 30px;
+}
