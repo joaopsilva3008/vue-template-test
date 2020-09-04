@@ -9,11 +9,11 @@
 </template>
 <script>
 export default {
-    mounted(){
-      this.$store.dispatch('setBooking');
-    }
-}
+  mounted() {
+    this.$store.dispatch("fetchBooking");
+  }
+};
 </script>
 <style>
-  @import './assets/css/global.css';
+@import "./assets/css/global.css";
 </style>

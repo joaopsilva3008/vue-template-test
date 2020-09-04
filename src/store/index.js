@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import booking from "./modules/booking.store"
+import booking from "./modules/booking.store";
 
 Vue.use(Vuex);
 
